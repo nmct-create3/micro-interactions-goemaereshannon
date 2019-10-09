@@ -53,7 +53,11 @@
 
     /* transitions */
     --global-transitionEasing-out: ease-out;
+    --global-transitionEasing-out-cubic: cubic-bezier(0.22, 0.61, 0.36, 1);
     --global-transitionDuration-alpha: .1s;
+    --global-transitionDuration-beta: .2s;
+    --global-transitionDuration-gamma: .3s;
+
 
      /* Baseline settings */
     --global-baseline: 8px;         
@@ -1299,14 +1303,29 @@ more padding on the right to avoid overlap
 
 */
 
+@media (prefers-color-scheme: dark) {
+    .c-tent {
+        --tent-backgroundColor: var(--global-color-neutral-xxx-dark);
+        --tent__icon-backgroundColor: var(--global-color-neutral-xxx-dark);
+        --tent__action-backgroundColor: var(--global-color-neutral-xx-dark);
+    }
+}
+
 /* icons */
 
 .c-icon__path--color-1 {
-    fill: var(--global-color-alpha-x-transparent);
+    fill: var(--icon__path-color-1, var(--global-color-alpha-x-transparent));
 }
 
 .c-icon__path--color-2 {
-    fill: var(--global-color-alpha);
+    fill: var(--icon__path-color-2, var(--global-color-alpha));
+}
+
+@media (prefers-color-scheme: dark) {
+    .c-icon {
+        --icon__path-color-1: var(--global-color-alpha);
+        --icon__path-color-2: white;
+    }
 }
 
 /*------------------------------------*\
