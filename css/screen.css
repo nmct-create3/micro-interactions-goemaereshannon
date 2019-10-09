@@ -1246,6 +1246,7 @@ more padding on the right to avoid overlap
     text-align: center;
     font-weight: 600;
     padding: calc(var(--tent__icon-size) / 5) var(--global-whitespace);
+    /* color: var(--tent__action-color, var(--global-color-alpha)); */
     background-color: var(--tent__action-backgroundColor, var(--global-color-neutral-xxxx-light));
     transform: var(--tent__action-opacity, translateY(calc(var(--tent__icon-size) / 2)));
     transition: all var(--tent-transition);
@@ -1306,8 +1307,11 @@ more padding on the right to avoid overlap
 @media (prefers-color-scheme: dark) {
     .c-tent {
         --tent-backgroundColor: var(--global-color-neutral-xxx-dark);
+        --tent__content-color: var(--global-color-neutral-light);
         --tent__icon-backgroundColor: var(--global-color-neutral-xxx-dark);
+        --tent__icon-backgroundColor: var(--global-color-alpha-light);
         --tent__action-backgroundColor: var(--global-color-neutral-xx-dark);
+        /* --tent__action-color: white; */
     }
 }
 
@@ -1323,7 +1327,7 @@ more padding on the right to avoid overlap
 
 @media (prefers-color-scheme: dark) {
     .c-icon {
-        --icon__path-color-1: var(--global-color-alpha);
+        --icon__path-color-1: var(--global-color-alpha-dark);
         --icon__path-color-2: white;
     }
 }
